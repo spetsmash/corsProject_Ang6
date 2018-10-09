@@ -3,3 +3,8 @@
 <!--<p appBetterHighlights [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with custom directive BetterHighlight</p>-->
 <!--<p [appBetterHighlights]="'red'" [defaultColor]="'yellow'">Style me with custom directive BetterHighlight</p>-->
 <p [appBetterHighlights]="'red'" defaultColor="yellow">Style me with custom directive BetterHighlight</p>
+
+<button (click)="onlyOdd = !onlyOdd">Change</button>
+<div *appUnless="onlyOdd">
+  <p>Show</p>
+</div>
