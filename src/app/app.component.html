@@ -1,3 +1,5 @@
 <p appBasicHightlight>Style me with custom directive BasicHighlight</p>
 
-<p appBetterHighlights>Style me with custom directive BetterHighlight</p>
+<!--<p appBetterHighlights [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with custom directive BetterHighlight</p>-->
+<!--<p [appBetterHighlights]="'red'" [defaultColor]="'yellow'">Style me with custom directive BetterHighlight</p>-->
+<p [appBetterHighlights]="'red'" defaultColor="yellow">Style me with custom directive BetterHighlight</p>
