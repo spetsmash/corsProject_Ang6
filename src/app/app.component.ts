@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   onlyOdd = false;
-  value = 10;
+  value = 5;
 
   constructor() {}
 }
