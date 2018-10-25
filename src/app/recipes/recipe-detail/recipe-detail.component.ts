@@ -4,7 +4,7 @@ import { Recipe } from '../recipe.model';
 // import {Ingredient} from '../../shared/ingredient.model';
 import {RecipeService} from '../recipe.service';
 import {ShoppingListService} from '../../shopping-list/shopping-list.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -17,7 +17,8 @@ id: number;
 
   constructor(private recipeService: RecipeService,
               private sLService: ShoppingListService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
 
 
@@ -33,6 +34,10 @@ id: number;
         this.recipe = this.recipeService.getRecipeById(this.id);
       }
     );
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
 }
