@@ -29,11 +29,16 @@ export class RecipeService {
 
   constructor (private shopppingListService: ShoppingListService) {}
 
-  // addIngredientsToShoppingList(ingredients: Ingredient[]) {
-  //   this.shopppingListService.addNewIngredients(ingredients);
-  // }
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.shopppingListService.addNewIngredients(ingredients);
+  }
 
   getRecipe() {
     return this.recipes.slice();
+  }
+
+  getRecipeById(id: number): Recipe {
+    return this.recipes[id];
+
   }
 }
