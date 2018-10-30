@@ -20,7 +20,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   constructor(public shoppingListService: ShoppingListService) { }
 
-  onAddItem(form: NgForm) {
+  onSubmit(form: NgForm) {
     // this.shoppingListService.addIngredient(
     //   new Ingredient(
     //     this.nameInputRef.nativeElement.value,
@@ -34,6 +34,8 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.shoppingListService.addIngredient(newIngredient);
     }
+    this.editMode = false;
+    form.reset();
   }
 
 
