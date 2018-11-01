@@ -17,6 +17,8 @@ import {RouterModule} from '@angular/router';
 import {routes} from './router';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import {HttpModule} from '@angular/http';
+import {DataStorageService} from './shared/data-storage.service';
 
 
 @NgModule({
@@ -37,11 +39,13 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
   providers: [
     RecipeService,
-    ShoppingListService
+    ShoppingListService,
+    DataStorageService
   ],
   bootstrap: [AppComponent]
 })
