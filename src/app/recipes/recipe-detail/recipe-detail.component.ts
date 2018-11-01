@@ -42,6 +42,7 @@ id: number;
 
   onDeleteRecipe() {
     this.recipeService.deleteRecire(this.id);
+    this.router.navigate(['/recipes']);
   }
 
 }
