@@ -40,4 +40,8 @@ id: number;
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
+  onDeleteRecipe() {
+    this.recipeService.deleteRecire(this.id);
+  }
+
 }
