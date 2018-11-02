@@ -43,4 +43,8 @@ export class AuthService {
   isAuthenticated() {
     return this.token != null;
   }
+
+  logOut() {
+
+  }
 }
