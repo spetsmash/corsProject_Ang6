@@ -19,4 +19,5 @@ export const routes: Routes = [
     ]},
   {path: 'shopping-list', component: ShoppingListComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'signin', component: SigninComponent},
 ];
