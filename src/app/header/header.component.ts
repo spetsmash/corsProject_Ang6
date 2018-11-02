@@ -12,7 +12,7 @@ import {AuthService} from '../auth/auth.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private dataStorageService: DataStorageService,
-              private authService: AuthService) {}
+              public authService: AuthService) {}
 
   ngOnInit() {}
 
@@ -28,4 +28,7 @@ export class HeaderComponent implements OnInit {
     this.dataStorageService.getRecipes();
   }
 
+  onLogout() {
+    this.authService.logOut();
+  }
 }
