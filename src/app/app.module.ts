@@ -32,11 +32,11 @@ import {AuthGuardService} from './auth/auth-guard.service';
     SigninComponent
   ],
   imports: [
+    RecipesModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpModule,
-    RecipesModule
   ],
   providers: [
     RecipeService,
