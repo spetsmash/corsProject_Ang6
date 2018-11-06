@@ -7,6 +7,8 @@ import {RecipeListComponent} from './recipe-list/recipe-list.component';
 import {RecipeItemComponent} from './recipe-list/recipe-item/recipe-item.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import { recipesRoutes } from './recipes-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {CommonModule} from '@angular/common';
   ],
   imports: [
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(recipesRoutes)
   ]
 })
 export class RecipesModule {
