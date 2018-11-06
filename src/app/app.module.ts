@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RecipesModule} from './recipes/recipes.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {RecipeService} from './recipes/recipe.service';
@@ -14,6 +13,7 @@ import {AuthGuardService} from './auth/auth-guard.service';
 import {SharedModule} from './shared/shared.module';
 import {ShoppingListModule} from './shopping-list/shopping-list.module';
 import {AuthModule} from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -21,9 +21,9 @@ import {AuthModule} from './auth/auth.module';
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
-    RecipesModule,
     SharedModule,
     ShoppingListModule,
     AuthModule,
