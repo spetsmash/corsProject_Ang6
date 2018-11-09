@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import { recipesRoutes } from './recipes-routing.module';
 import {SharedModule} from '../shared/shared.module';
+import {AuthGuardService} from '../auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import {SharedModule} from '../shared/shared.module';
     CommonModule,
     RouterModule.forChild(recipesRoutes),
     SharedModule
+  ],
+  providers: [
+    AuthGuardService
   ]
+
 })
 export class RecipesModule {
 
