@@ -10,7 +10,6 @@ import {AuthService} from '../../auth/auth.service';
 })
 
 export class HeaderComponent implements OnInit {
-
   constructor(private dataStorageService: DataStorageService,
               public authService: AuthService) {}
 
@@ -32,5 +31,7 @@ export class HeaderComponent implements OnInit {
     this.authService.logOut();
   }
 
-
+  isAuthenticated() {
+   return this.authService.isAuthenticated();
+  }
 }
