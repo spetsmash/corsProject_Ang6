@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import {RouterModule} from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import {routes} from './router';
 import {HttpModule} from '@angular/http';
 import {SharedModule} from './shared/shared.module';
@@ -19,7 +19,7 @@ import {CoreModule} from './core/core.module';
     ShoppingListModule,
     AuthModule,
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
     HttpModule,
     CoreModule
   ],
