@@ -14,7 +14,10 @@ export class DataStorageService {
               private authService: AuthService) {}
 
   storeRecipes() {
-    return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json', this.recipeService.getRecipe());
+    return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json', this.recipeService.getRecipe(), {
+      observe: 'body'
+      // observe: 'events'
+    });
   }
 
   getRecipes() {
