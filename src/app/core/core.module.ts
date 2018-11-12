@@ -11,6 +11,7 @@ import {ShoppingListService} from '../shopping-list/shopping-list.service';
 import {DataStorageService} from '../shared/data-storage.service';
 import {AuthInterceptor} from '../shared/auth.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {LoggerInterceptor} from '../shared/logger.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     ShoppingListService,
     DataStorageService,
     AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptor, multi: true }
     // AuthGuardService
   ]
 })
