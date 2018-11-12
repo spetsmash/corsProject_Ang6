@@ -5,7 +5,7 @@ import {Recipe} from '../recipes/recipe.model';
 import {map} from 'rxjs/operators';
 import * as firebase from 'firebase';
 import {AuthService} from '../auth/auth.service';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
 
 @Injectable()
 export class DataStorageService {
@@ -14,12 +14,22 @@ export class DataStorageService {
               private authService: AuthService) {}
 
   storeRecipes() {
-    return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json', this.recipeService.getRecipe(), {
-      // observe: 'events'
-      observe: 'body',
-      // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg')
-      // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg').append()
+    const token = this.authService.getToken();
+    // // return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipe(), {
+    // return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json', this.recipeService.getRecipe(), {
+    //   // observe: 'events'
+    //   observe: 'body',
+    //   params: new HttpParams().set('auth', token)
+    //   // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg')
+    //   // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg').append()
+    // });
+
+    const req = new HttpRequest('PUT', 'https://dummyproject-b795c.firebaseio.com/recipes.json',
+      this.recipeService.getRecipe(), {
+        reportProgress: true,
+        // params: new HttpParams().set('auth', token)
     });
+    return this.http.request(req);
   }
 
   getRecipes() {
@@ -27,7 +37,8 @@ export class DataStorageService {
     const token = this.authService.getToken();
 
     // this.http.get<Recipe[]>('https://dummyproject-b795c.firebaseio.com/recipes.json?auth=' + token).pipe(map(
-    this.http.get<Recipe[]>('https://dummyproject-b795c.firebaseio.com/recipes.json?auth=' + token, {
+    // this.http.get<Recipe[]>('https://dummyproject-b795c.firebaseio.com/recipes.json?auth=' + token, {
+    this.http.get<Recipe[]>('https://dummyproject-b795c.firebaseio.com/recipes.json', {
       observe: 'body',
       responseType: 'json'
     }).pipe(map(
