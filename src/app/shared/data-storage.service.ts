@@ -5,7 +5,7 @@ import {Recipe} from '../recipes/recipe.model';
 import {map} from 'rxjs/operators';
 import * as firebase from 'firebase';
 import {AuthService} from '../auth/auth.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class DataStorageService {
@@ -15,8 +15,10 @@ export class DataStorageService {
 
   storeRecipes() {
     return this.http.put('https://dummyproject-b795c.firebaseio.com/recipes.json', this.recipeService.getRecipe(), {
-      observe: 'body'
       // observe: 'events'
+      observe: 'body',
+      // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg')
+      // headers: new HttpHeaders().set('Authorization', 'Bearer slrosdvdfvkpg').append()
     });
   }
 
