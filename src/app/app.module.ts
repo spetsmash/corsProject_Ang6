@@ -19,7 +19,7 @@ import {CoreModule} from './core/core.module';
     SharedModule,
     ShoppingListModule,
     AuthModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'cors-project1'}),
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
     HttpClientModule,
     CoreModule
