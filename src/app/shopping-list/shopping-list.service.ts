@@ -12,18 +12,18 @@ export class ShoppingListService {
     new Ingredient('Tomatoes', 10)
   ];
 
-  getIngredients() {
-    return this.ingredients.slice();
-  }
+  // getIngredients() {
+  //   return this.ingredients.slice();
+  // }
 
   getIngredient(index: number) {
     return this.ingredients[index];
   }
 
-  addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
-    this.ingredientsChanges.next(this.ingredients.slice());
-  }
+  // addIngredient(ingredient: Ingredient) {
+  //   this.ingredients.push(ingredient);
+  //   this.ingredientsChanges.next(this.ingredients.slice());
+  // }
 
   addNewIngredients(ingredients: Ingredient[]) {
     // for (let ingredient of ingredients) {
