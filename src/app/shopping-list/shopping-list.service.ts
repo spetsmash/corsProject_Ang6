@@ -25,13 +25,13 @@ export class ShoppingListService {
   //   this.ingredientsChanges.next(this.ingredients.slice());
   // }
 
-  addNewIngredients(ingredients: Ingredient[]) {
-    // for (let ingredient of ingredients) {
-    //   this.addIngredient(ingredient);
-    // }
-    this.ingredients.push(...ingredients);
-    this.ingredientsChanges.next(this.ingredients.slice());
-  }
+  // addNewIngredients(ingredients: Ingredient[]) {
+  //   // for (let ingredient of ingredients) {
+  //   //   this.addIngredient(ingredient);
+  //   // }
+  //   this.ingredients.push(...ingredients);
+  //   this.ingredientsChanges.next(this.ingredients.slice());
+  // }
 
   deleteItem(index: number) {
     this.ingredients.splice(index, 1);
